@@ -10,7 +10,23 @@ fi
 
 # Define workspace
 NETWORK_VOLUME="/workspace"
+if [ ! -d "$NETWORK_VOLUME" ]; then
+    echo "$NETWORK_VOLUME does not exist, falling back to /"
+    NETWORK_VOLUME="/"
+fi
 
+echo "Setting up download scripts..."
+cd "$NETWORK_VOLUME"
+if [ ! -d "download-scripts" ]; then
+    git clone https://github.com/ky3l1244/comfyui-bare-gh download-scripts
+else
+    echo "Download scripts already exist, pulling latest..."
+    cd download-scripts
+    git pull
+    cd ..
+fi
+
+chmod +x /workspace/download-scripts/download_models.sh
 # Install Python libraries
 echo "Installing Python libraries..."
 pip install --upgrade pip
