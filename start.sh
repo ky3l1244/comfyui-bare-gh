@@ -25,7 +25,7 @@ else
     cd ..
 fi
 
-chmod +x /workspace/download-scripts/download_models.sh
+# chmod +x /workspace/download-scripts/download_models.sh
 # Install Python libraries
 echo "Installing Python libraries..."
 pip install --upgrade pip
