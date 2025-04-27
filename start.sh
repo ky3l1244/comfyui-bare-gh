@@ -57,3 +57,5 @@ sleep 5  # Give Jupyter a moment to initialize
 echo "Starting ComfyUI..."
 cd "$NETWORK_VOLUME/ComfyUI"
 ALLOW_UNSAFE_MODEL_LOADING=1 python3 main.py --listen 0.0.0.0 --port 8188
+
+
