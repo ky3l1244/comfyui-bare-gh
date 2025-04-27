@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
-
 set -e  # stop script if any command fails
-
 # Optional: Use better memory management if available
 TCMALLOC="$(ldconfig -p | grep -Po "libtcmalloc.so.\d" | head -n 1)"
 if [ -n "$TCMALLOC" ]; then
